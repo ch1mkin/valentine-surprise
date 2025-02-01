@@ -1,0 +1,200 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for easy readability */
+    text-align: center;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    background: url('img.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; 
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Main Container */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    z-index: 10;
+}
+
+/* Title */
+.title {
+    font-family: 'Dancing Script', cursive; /* Romantic font for title */
+    font-size: 3rem;
+    color: #ff4b5c;
+    margin-bottom: 10px;
+    animation: fadeInTitle 2s ease-in-out;
+}
+
+/* Loving Message */
+.message {
+    font-family: 'Roboto', sans-serif; /* Roboto for message */
+    font-size: 1.2rem;
+    color: #ff6f61;
+    margin-bottom: 20px;
+    animation: fadeInMessage 2s ease-in-out;
+}
+
+/* Buttons */
+.buttons {
+    position: relative;
+    gap: 20px;  /* Space between buttons */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.buttons .btn {
+    font-family: 'Roboto', sans-serif; /* Roboto for buttons */
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Yes Button (On top) */
+.yes {
+    background-color: #ff4b5c;
+    color: white;
+}
+
+.yes:hover {
+    background-color: #d43a4e;
+}
+
+/* No Button (Moving one, on bottom) */
+.no {
+    background-color: #444;
+    color: white;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.no:hover {
+    background-color: #222;
+}
+
+/* Bounce Animation for the "Yes" Button */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Extra Yes Buttons */
+.extra-yes-btns {
+    display: none;
+    margin-top: 20px;
+}
+
+.extra-btn {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ff6f61;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.extra-btn:hover {
+    background-color: #ff4b5c;
+}
+
+/* Heart Falling Animation */
+#hearts-container {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in Title Animation */
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in Message Animation */
+@keyframes fadeInMessage {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heart Falling Animation */
+@keyframes heartFall {
+    0% { 
+        transform: translateY(-10vh) scale(1); 
+        opacity: 1; 
+    }
+    100% { 
+        transform: translateY(100vh) scale(0.5); 
+        opacity: 0; 
+    }
+}
+
+/* Heart Style */
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    color: red;
+    animation: heartFall 3s linear infinite;
+}
